@@ -7,7 +7,7 @@ class CsvManipulator(object):
         pass
     
     
-    def read_csv(self,filename='assesment\sample_data_for_test.csv'):
+    def read_csv(self,filename='sample_data_for_test.csv'):
         """
         This function reads a csv 
 
