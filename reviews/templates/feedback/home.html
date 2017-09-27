@@ -9,10 +9,16 @@
     {% if user.is_authenticated %}
     <p>hello</p>
     <p>welcome {{ user.username }}</p>
+        <p><a href="/create/feedback">Create feedback</a></p>
+        {% if user.is_superuser %}
+              <p><a href="/feedback">view feedback</a></p>
+             {% endif %}
     <p><a href="/logout">Logout</a></p>
     {% else %}
     <p><a href="/login">Login</a></p>
     <p><a href="/register">Register</a></p>
+
+
     {% endif %}
 </body>
 

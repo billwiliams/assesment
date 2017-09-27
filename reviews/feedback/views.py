@@ -62,7 +62,7 @@ class FeedbackCreateView(LoginRequiredMixin, CreateView):
     form_class = FeedbackForm
 
     def form_valid(self, form):
-        form.instance.created_by = self.request.user
+        form.instance.name = self.request.user
         return super(FeedbackCreateView, self).form_valid(form)
 
 

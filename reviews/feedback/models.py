@@ -19,7 +19,7 @@ class Feedback(models.Model):
         return self.id
 
     def get_absolute_url(self):
-        return reverse("feedback_details", kwargs={"pk": self.id})
+        return reverse("feedback_create")
 
     class Meta:
         db_table = 'reviews'
