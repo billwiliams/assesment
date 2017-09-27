@@ -6,10 +6,47 @@
 </head>
 
 <body>
-<a href="{%   url 'export_csv' %}"> export csv</a>
-{% for review in objects %}
-    review
+<a href="{% url 'export_csv' %}"> export csv</a>
 
-{% endfor %}
+<table>
+    <th>
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                phone number
+            </td>
+            <td>
+                rating
+            </td>
+            <td>
+                comments
+            </td>
+        </tr>
+    </th>
+    <tbody>
+    {% for review in object_list %}
+        <tr>
+            <td>
+                {{ review.name.username }}
+            </td>
+            <td>
+                {{ review.phone_number }}
+            </td>
+            <td>
+                {{ review.rating }}
+            </td>
+            <td>
+                {{ review.comments }}
+            </td>
+        </tr>
+
+    {% endfor %}
+    </tbody>
+
+</table>
+
+
 </body>
 </html>

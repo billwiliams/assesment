@@ -16,7 +16,7 @@ class Feedback(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
     def get_absolute_url(self):
         return reverse("feedback_create")
