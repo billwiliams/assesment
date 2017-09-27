@@ -1,52 +1,58 @@
-<!DOCTYPE html>
-<html>
+{% extends 'layouts/base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            <h3>
+                Feed back views list
+            </h3>
+                <div class="btn-toolbar">
 
-<head>
-    <title></title>
-</head>
-
-<body>
-<a href="{% url 'export_csv' %}"> export csv</a>
-
-<table>
-    <th>
-        <tr>
-            <td>
-                Name
-            </td>
-            <td>
-                phone number
-            </td>
-            <td>
-                rating
-            </td>
-            <td>
-                comments
-            </td>
-        </tr>
-    </th>
-    <tbody>
-    {% for review in object_list %}
-        <tr>
-            <td>
-                {{ review.name.username }}
-            </td>
-            <td>
-                {{ review.phone_number }}
-            </td>
-            <td>
-                {{ review.rating }}
-            </td>
-            <td>
-                {{ review.comments }}
-            </td>
-        </tr>
-
-    {% endfor %}
-    </tbody>
-
-</table>
+                    <button class="btn btn-primary" href="{% url 'export_csv' %}"> export csv</button>
+                </div>
 
 
-</body>
-</html>
+                <table class="table">
+                    <th>
+                        <tr>
+                            <td>
+                                Name
+                            </td>
+                            <td>
+                                phone number
+                            </td>
+                            <td>
+                                rating
+                            </td>
+                            <td>
+                                comments
+                            </td>
+                        </tr>
+                    </th>
+                    <tbody>
+                    {% for review in object_list %}
+                        <tr>
+                            <td>
+                                {{ review.name.username }}
+                            </td>
+                            <td>
+                                {{ review.phone_number }}
+                            </td>
+                            <td>
+                                {{ review.rating }}
+                            </td>
+                            <td>
+                                {{ review.comments }}
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+                    </tbody>
+
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
