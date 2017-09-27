@@ -1,12 +1,13 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 
 
 # Create your models here.
 
-class InternetPackageType(models.Model):
+class Feedback(models.Model):
     id = models.AutoField(primary_key=True)
-    name = models.ForeignKey('User', models.DO_NOTHING)
+    name = models.ForeignKey(User, models.DO_NOTHING)
     phone_number = models.CharField(max_length=45, unique=True)
     neighbourhood = models.ForeignKey('Neighbourhood', models.DO_NOTHING)
     rating = models.IntegerField(blank=True, null=True)
@@ -21,7 +22,7 @@ class InternetPackageType(models.Model):
         return reverse("feedback_details", kwargs={"pk": self.id})
 
     class Meta:
-        db_table = 'feedback'
+        db_table = 'reviews'
 
 
 class Neighbourhood(models.Model):
